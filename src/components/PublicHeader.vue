@@ -14,11 +14,6 @@ const setNormal = () => {
 }
 const switchMode = () => {
   mode === 'dark' ? setNormal() : setDark()
-  // if (mode === 'dark') {
-  //   setNormal()
-  // } else {
-  //   setDark()
-  // }
 }
 const switchSystem = () => {
   const darkBySystem = window.matchMedia('(prefers-color-scheme: dark)').matches

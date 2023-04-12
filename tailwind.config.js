@@ -10,9 +10,6 @@ export default {
           normal: '#333',
           dark: '#5F99F7'
         },
-        blue: {
-          default: '#5F99F7'
-        },
       }
     },
   },
