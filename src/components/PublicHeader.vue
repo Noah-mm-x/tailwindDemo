@@ -2,16 +2,27 @@
 <script setup>
 let mode = $ref('')
 mode = localStorage.theme
+const setDark = () => {
+  mode = 'dark'
+  localStorage.theme = 'dark'
+  document.documentElement.classList.add('dark')
+}
+const setNormal = () => {
+  mode = ''
+  localStorage.theme = ''
+  document.documentElement.classList.remove('dark')
+}
 const switchMode = () => {
-  if (mode === 'dark') {
-    mode = ''
-    localStorage.theme = ''
-    document.documentElement.classList.remove('dark')
-  } else {
-    mode = 'dark'
-    localStorage.theme = 'dark'
-    document.documentElement.classList.add('dark')
-  }
+  mode === 'dark' ? setNormal() : setDark()
+  // if (mode === 'dark') {
+  //   setNormal()
+  // } else {
+  //   setDark()
+  // }
+}
+const switchSystem = () => {
+  const darkBySystem = window.matchMedia('(prefers-color-scheme: dark)').matches
+  darkBySystem ? setDark() : setNormal()
 }
 </script>
 
@@ -24,7 +35,7 @@ const switchMode = () => {
       </router-link>
       <div class="flex justify-start">
         <a href="javascript:;" class="text-active-normal dark:text-gray-200" @click="switchMode">切换主题</a>
-        <!-- <a href="javascript:;">切换暗黑</a> -->
+        <a href="javascript:;" class="text-active-normal dark:text-gray-200 pl-[10px]" @click="switchSystem">系统</a>
       </div>
     </div>
   </div>
