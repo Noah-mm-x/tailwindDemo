@@ -8,3 +8,11 @@
   font-family: PingFangSC-Regular;
   touch-action: pan-y;
 }
+
+/* 以下代码不生效，不知为何，会被覆盖，应该是顺序问题 */
+
+@layer components {
+  .btn {
+    @apply bg-blue-500 hover:bg-blue-700;
+  }
+}

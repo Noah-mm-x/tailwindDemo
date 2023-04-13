@@ -22,7 +22,7 @@ const getVal = (val) => {
     <div class="flex justify-start mt-[30px] pl-[20px]">
       按钮组：
       <a href="javascript:;"
-         class="btn">
+         class="btn hover:bg-red-700">
         按钮一
       </a>
       <a href="javascript:;"
@@ -39,6 +39,6 @@ const getVal = (val) => {
 <style>
 /* dark: bg-active-dark dark:text-active-normal */
 .btn {
-  @apply flex justify-center items-center ml-[10px] w-[60px] h-[40px] rounded bg-gray-700 text-gray-200 text-[12px] dark:bg-active-dark;
+  @apply flex justify-center items-center ml-[10px] w-[60px] h-[40px] rounded bg-gray-700 text-gray-200 text-[12px] dark:bg-active-dark hover:bg-gray-300;
 }
 </style>
