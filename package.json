@@ -9,7 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.47",
+    "@varlet/ui": "^2.10.1-alpha.1682612292220",
+    "vue": "3.2.47",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {

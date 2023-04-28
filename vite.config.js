@@ -2,12 +2,25 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 // https://vitejs.dev/config/
+
+import components from 'unplugin-vue-components/vite'
+import autoImport from 'unplugin-auto-import/vite'
+import { VarletUIResolver } from 'unplugin-vue-components/resolvers'
+
 export default defineConfig({
-  plugins: [vue(
-    {
-      reactivityTransform: true,
-    }
-  )],
+  plugins: [
+    vue(
+      {
+        reactivityTransform: true,
+      }
+    ),
+    components({
+      resolvers: [VarletUIResolver()]
+    }),
+    autoImport({
+      resolvers: [VarletUIResolver({ autoImport: true })]
+    })
+  ],
   // 不知道网上其他人为啥要这么写，可能是版本问题吧，我这么写会报错
   // css: {
   //   postcss: {
